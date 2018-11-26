@@ -5,7 +5,7 @@ const {
   fontSize,
   color,
   style
-} = require('../dist')
+} = require('../dist/index.cjs')
 
 const suite = new Benchmark.Suite()
 
@@ -29,6 +29,7 @@ const tests = [
       'magenta',
     ] })
   },
+  { name: 'width object', func: () => width({ width: { 0: 1, 1: 1/2, 2: 1/3, 3: 1/4, 4: 1/5 } }) },
 ]
 
 tests.forEach(({ name, func }) => { suite.add(name, func) })
