@@ -340,6 +340,20 @@ test('space returns responsive paddings', t => {
   })
 })
 
+test('space can accept a breakpoint map (object)', t => {
+  const a = space({
+    theme: {breakpoints: {xs: 0, sm: '40em', md: '50em', lg: '60em'}},
+    p: {xs: 1, md: 2}
+  })
+
+  t.deepEqual(a, {
+    padding: '4px',
+    '@media screen and (min-width: 50em)': {
+      padding: '8px',
+    },
+  })
+})
+
 test('space returns responsive directional paddings', t => {
   const a = space({pt: [0, 1], pb: [2, 3]})
   t.deepEqual(a, {
@@ -421,6 +435,19 @@ test('width returns responsive values', t => {
   t.deepEqual(a, {
     width: '100%',
     '@media screen and (min-width: 40em)': {width: '50%'},
+  })
+})
+
+test('width returns responsive values for object', t => {
+  const a = width({width: {0: 1, 2: 1/2}})
+
+  t.deepEqual(a, {
+    '@media screen and (min-width: 40em)': {
+      width: '100%'
+    },
+    '@media screen and (min-width: 64em)': {
+      width: '50%'
+    },
   })
 })
 
@@ -648,6 +675,42 @@ test('style allows array values', t => {
     'flex-direction': 'column',
     '@media screen and (min-width: 52em)': {
       'flex-direction': 'row',
+    }
+  })
+})
+
+test('style allows a breakpoint map', t => {
+  const direction = style({
+    cssProperty: 'flex-direction',
+    prop: 'direction'
+  })
+  const a = direction({
+    theme: { breakpoints: { default: null, sm: '40em', md: '50em', lg: '60em' } },
+    direction: { default: 'column', sm: 'row', lg: 'column' }
+  })
+  t.deepEqual(a, {
+    'flex-direction': 'column',
+    '@media screen and (min-width: 40em)': {
+      'flex-direction': 'row',
+    },
+    '@media screen and (min-width: 60em)': {
+      'flex-direction': 'column',
+    }
+  })
+})
+
+test('style allows a breakpoint map without a default', t => {
+  const direction = style({
+    cssProperty: 'flex-direction',
+    prop: 'direction'
+  })
+  const a = direction({
+    theme: { breakpoints: { sm: '40em', md: '50em' } },
+    direction: { md: 'column' }
+  })
+  t.deepEqual(a, {
+    '@media screen and (min-width: 50em)': {
+      'flex-direction': 'column',
     }
   })
 })
