@@ -204,17 +204,10 @@ All styled-system functions accept arrays as values to set styles responsively u
 <Text fontSize={[ 3, 4, 5 ]} />
 ```
 
-Alternatively if you define your theme breakpoints as an `object` you can use the following syntax:
+An alternative object-based syntax is also available for responsive styles:
 
 ```jsx
-<Box
-  width={{
-    sm: 1,
-    md: 1/2,
-    lg: 1/4
-  }}
->
-</Box>
+<Box p={{ 0: 1, 1: 2 }} />
 ```
 
 Read the [Responsive Styles][] docs for more information.

@@ -28,35 +28,49 @@ All style utilities add props that accept arrays as values for mobile-first resp
 <Box p={[ 1, 2, 3, 4 ]} />
 ```
 
+## Object-based values
 
-## Using objects
-
-Alternatively you can define your breakpoints as an `object` e.g.
+The array-based syntax is meant to encourage a strict mobile-first mindset when building UI.
+Alternatively, responsive styles can be defined with object-based values,
+allowing you to skip certain breakpoints when not needed.
 
 ```jsx
-// theme.js
-export default {
-  breakpoints: {
-    sm: 0,    // zero represents the default (for mobile-first approach)
-    md: '48em',
-    lg: '80em'
-  }
-}
+<Box width={{ 3: 1/2 }} />
 ```
 
-And then pass an `object` to configure how the component should respond at these breakpoints:
+To pass values that are *not* scoped to a breakpoint, use any key that references an undefined value.
 
 ```jsx
 <Box
   width={{
-    sm: 1,    // 100% by default (no media query)
-    md: 1/2,  // 50% at 'md' (48em and up)
-    lg: 1/4   // 25% at 'lg' (80em and up)
+    _: 1,       // where `breakpoints._` is undefined
+    large: 1/2
   }}
 />
 ```
 
-Note: it isn't necessary to set a value for each breakpoint. The following would only apply 50% width at the `md` breakpoint:
+## Aliases
+
+Using the object based syntax, you can create aliases for your `theme.breakpoints`.
+
+```js
+// theme.js
+const theme = {
+  breakpoints: [
+    '40em', '52em', '64em'
+  ]
+}
+
+theme.breakpoints.small = theme.breakpoints[0]
+theme.breakpoints.medium = theme.breakpoints[1]
+theme.breakpoints.large = theme.breakpoints[2]
+
+export default theme
+```
+
+With aliases defined in your theme, they can be referenced with the object-based syntax:
 
 ```jsx
-<Box width={{ md: 1/2 }} />
+<Box width={{ large: 1/2 }} />
+```
+
