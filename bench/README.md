@@ -1,20 +1,26 @@
-
 # Benchmarks
 
-function | v2 | v3
----|---|---
-space | 204,563 | 436,221
-width | 271,007 | 719,793
-fontSize | 273,392 | 1,071,261
-color | 260,116 | 550,867
-style | 575,776 | 905,167
-responsiveStyle | 273,371 | 905,167
-space (array) | 56,658 | 135,207
-width (array) | 47,360 | 132,317
-fontSize (array) | 49,274 | 165,067
-color (array) | 51,019 | 163,952
+## v4 alpha
+
+| functions                     | v3  | v4  |
+| ----------------------------- | --- | --- |
+| space, width, color, fontSize |     |
+
+| function         | v2      | v3        |
+| ---------------- | ------- | --------- |
+| space            | 204,563 | 436,221   |
+| width            | 271,007 | 719,793   |
+| fontSize         | 273,392 | 1,071,261 |
+| color            | 260,116 | 550,867   |
+| style            | 575,776 | 905,167   |
+| responsiveStyle  | 273,371 | 905,167   |
+| space (array)    | 56,658  | 135,207   |
+| width (array)    | 47,360  | 132,317   |
+| fontSize (array) | 49,274  | 165,067   |
+| color (array)    | 51,019  | 163,952   |
 
 ## v2
+
 ```
 v2 space x 204,563 ops/sec ±1.83% (80 runs sampled)
 v2 width x 271,077 ops/sec ±1.94% (82 runs sampled)
@@ -29,6 +35,7 @@ v2 color array x 51,019 ops/sec ±1.64% (82 runs sampled)
 ```
 
 ## v3
+
 ```
 space x 436,221 ops/sec ±0.80% (85 runs sampled)
 width x 719,793 ops/sec ±1.68% (83 runs sampled)
@@ -42,6 +49,7 @@ color array x 163,952 ops/sec ±2.00% (78 runs sampled)
 ```
 
 ## v2
+
 ```
 v2 space x 168,251 ops/sec ±1.81% (80 runs sampled)
 v2 width x 219,851 ops/sec ±2.21% (77 runs sampled)
@@ -55,6 +63,7 @@ v2 color array x 47,630 ops/sec ±1.78% (78 runs sampled)
 ```
 
 ## v3
+
 ```
 space x 471,422 ops/sec ±2.06% (79 runs sampled)
 width x 765,141 ops/sec ±2.37% (79 runs sampled)
@@ -68,6 +77,7 @@ color array x 149,187 ops/sec ±1.72% (79 runs sampled)
 ```
 
 ## v2
+
 ```
 v2 space x 199,672 ops/sec ±2.39% (83 runs sampled)
 v2 width x 229,147 ops/sec ±3.58% (76 runs sampled)
@@ -81,6 +91,7 @@ v2 color array x 51,643 ops/sec ±1.23% (83 runs sampled)
 ```
 
 ## v3
+
 ```
 space x 367,607 ops/sec ±0.90% (81 runs sampled)
 width x 715,450 ops/sec ±2.21% (80 runs sampled)
@@ -94,6 +105,7 @@ color array x 154,033 ops/sec ±1.34% (81 runs sampled)
 ```
 
 ## v2
+
 ```
 v2 space x 137,599 ops/sec ±15.31% (75 runs sampled)
 v2 width x 222,377 ops/sec ±2.47% (73 runs sampled)
@@ -107,6 +119,7 @@ v2 color array x 47,424 ops/sec ±2.21% (77 runs sampled)
 ```
 
 ## v3
+
 ```
 space x 413,494 ops/sec ±3.14% (80 runs sampled)
 width x 614,903 ops/sec ±3.28% (72 runs sampled)
@@ -122,6 +135,7 @@ color array x 153,113 ops/sec ±2.14% (79 runs sampled)
 ## with env loose option
 
 ## v2
+
 ```
 v2 space x 144,528 ops/sec ±4.97% (73 runs sampled)
 v2 width x 202,668 ops/sec ±4.54% (67 runs sampled)
@@ -136,6 +150,7 @@ v2 color array x 52,851 ops/sec ±1.25% (82 runs sampled)
 ```
 
 ## v3
+
 ```
 space x 445,660 ops/sec ±2.82% (82 runs sampled)
 width x 608,948 ops/sec ±7.06% (67 runs sampled)
@@ -149,6 +164,7 @@ color array x 142,745 ops/sec ±4.47% (72 runs sampled)
 ```
 
 ## v2
+
 ```
 v2 space x 194,508 ops/sec ±1.28% (84 runs sampled)
 v2 width x 254,710 ops/sec ±2.18% (79 runs sampled)
@@ -163,6 +179,7 @@ v2 color array x 54,111 ops/sec ±1.39% (83 runs sampled)
 ```
 
 ## v3
+
 ```
 space x 356,970 ops/sec ±4.98% (72 runs sampled)
 width x 643,964 ops/sec ±3.19% (78 runs sampled)
@@ -174,4 +191,3 @@ space array x 135,592 ops/sec ±1.83% (84 runs sampled)
 fontSize array x 164,261 ops/sec ±1.28% (78 runs sampled)
 color array x 168,691 ops/sec ±2.31% (82 runs sampled)
 ```
-
