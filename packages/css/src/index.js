@@ -16,6 +16,7 @@ const toCamelCase = str => {
 }
 
 // from https://github.com/30-seconds/30-seconds-of-code
+// TODO: optimize for styled-system
 const pluralize = (val, word, plural = word + 's') => {
   const _pluralize = (num, word, plural = word + 's') =>
     [1, -1].includes(Number(num)) ? word : plural

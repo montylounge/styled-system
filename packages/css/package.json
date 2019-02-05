@@ -4,7 +4,8 @@
   "description": "Styled System props for all CSS properties",
   "main": "dist/index.js",
   "scripts": {
-    "test": "nyc ava"
+    "test": "nyc ava",
+    "cover": "nyc report --reporter=html --reporter=lcov"
   },
   "keywords": [],
   "author": "Brent Jackson",
